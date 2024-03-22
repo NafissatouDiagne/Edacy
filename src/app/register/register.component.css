@@ -1,0 +1,35 @@
+.ima {
+  background-image: url('https://wallpapers-fenix.eu/full/141216/100221792.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; /* Utilisation de 100vh pour la hauteur pour occuper toute la hauteur de l'écran */
+  overflow: hidden;
+}
+
+.log {
+  padding: 10%;
+  margin: 30px;
+  margin-top: 50px;
+}
+
+.example-form {
+
+  min-width: 130px;
+  max-width: 300px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Fond blanc avec opacité */
+  padding: 5%; /* Utilisation de pourcentage pour un padding responsive */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 10, 0.1);
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}

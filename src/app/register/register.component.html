@@ -1,0 +1,39 @@
+<div class="ima">
+  <div class="log" style="padding: 5%;display: flex; justify-content: center; align-items: center;">
+    <form class="example-form" #form="ngForm" (ngSubmit)="submitForm(form)">
+      <h1 style="margin-bottom: 50px;">Register</h1>
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input type="text" matInput name="username" [(ngModel)]="dataApi.username" required>
+
+        <mat-error *ngIf="form.submitted && form.controls['username'].hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput name="email" [(ngModel)]="dataApi.email" required>
+
+        <mat-error *ngIf="form.submitted && form.controls['email'].hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="form.submitted && form.controls['email'].hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput name="password" [(ngModel)]="dataApi.password" required>
+
+        <mat-error *ngIf="form.submitted && form.controls['password'].hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <div class="example-button-row">
+        <button mat-raised-button style="margin-top: 10px;" color="primary" type="submit" (click)="snackBar()">S'inscrire</button>
+      </div>
+      <div style="margin-top: 10px;">Si vous avez deja un compte <button mat-button style="color: blue;text-decoration-line: underline;" (click)="Sign()">Sign-In</button> </div>
+    </form>
+  </div>
+</div>
