@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import * as Chartist from 'chartist';
+import { SidenavComponent } from '../sidenav/sidenav.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [MatTooltipModule,NavbarComponent],
+  imports: [MatTooltipModule,NavbarComponent,SidenavComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

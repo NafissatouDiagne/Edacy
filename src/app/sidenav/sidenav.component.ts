@@ -9,5 +9,9 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrl: './sidenav.component.css'
 })
 export class SidenavComponent {
+  isClicked:boolean=false;
+  clicked(){
+this.isClicked= !this.isClicked;
+  }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SidenavComponent } from '../sidenav/sidenav.component';
 declare const google: any;
 
 interface Marker {
@@ -11,6 +11,8 @@ draggable?: boolean;
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
+  standalone:true,
+  imports:[SidenavComponent],
   styleUrls: ['./maps.component.css']
 })
 export class MapsComponent implements OnInit {
