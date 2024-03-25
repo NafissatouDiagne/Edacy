@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +9,15 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   private apiUrl = 'http://127.0.0.1:8000/api'; // Ajoutez le protocole HTTP ici
-
+   currentUser:any;
   constructor(private http: HttpClient) { }
 
-  postData(data: any): Observable<any> {
+ /* postData(data: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/data`,data);
   }
   getData():Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/datas`);
-  }
+  }*/
   /**
    * Register
    */
@@ -31,6 +32,12 @@ export class ApiService {
    */
   postLogin(data:any):Observable<any>{
     return this.http.post<any>(`${this.apiUrl}/login`,data)
+  }
+  getUserData(token: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<any>(`${this.apiUrl}/profile`, { headers });
   }
 
 }
