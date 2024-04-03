@@ -1,15 +1,22 @@
 
 
-<nav class=" ml-64 ">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+<nav class=" ">
+  <div class="max-w-screen flex flex-wrap items-center border-y-2 -mb-0 shadow-xl justify-between mx-auto p-1">
+  <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
 
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-gray-700">Dashboard </span>
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-gray-700">Dashboard </span>
   </a>
   <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
       <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-        <img class="w-5 h-5 rounded-full me-3" aria-hidden="true" src="" alt={{user.lastname}}  viewBox="0 0 3900 3900"/>
-      {{user.firstname}} {{user.lastname}}
+        <ng-container *ngIf="user?.image; else showInitial">
+          <img class="w-8 h-8 rounded-full me-3 bg-center" [src]="user?.image" [alt]="user?.lastname" viewBox="0 0 3900 3900"/>
+        </ng-container>
+        <ng-template #showInitial>
+          <div class="w-8 h-8 rounded-full me-3 bg-center flex items-center justify-center text-white bg-gray-500 dark:bg-gray-700">
+            <span>{{ user?.lastname ? user.lastname[0] : '' }}</span>
+          </div>
+        </ng-template>
+        {{user?.firstname}} {{user?.lastname}}
       </button>
       <!-- Dropdown -->
       <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
@@ -18,7 +25,7 @@
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
               <div class="inline-flex items-center">
                 <img  class="h-3.5 w-3.5 rounded-full me-2" src="http://www.w3.org/2000/svg"  />
-              {{user.email}}
+              {{user?.email}}
               </div>
             </a>
           </li>

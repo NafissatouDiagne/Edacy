@@ -3,16 +3,30 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import * as Chartist from 'chartist';
 import { SidenavComponent } from '../sidenav/sidenav.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ApiService } from '../api.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [MatTooltipModule,NavbarComponent,SidenavComponent],
+  imports: [MatTooltipModule,NavbarComponent,SidenavComponent,
+    FormsModule,CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
+data:any[]=[];
+  constructor(private apiService:ApiService){}
 
-  constructor(){}
+AllUsers(){
+  this.apiService.getRegister().subscribe((response)=>{
+    this.data=response.user;
+    console.log('response.', response.user)
+
+  },(error)=>{
+    console.log('error lors de la recuperations des donnees des utilisateurs', error)
+  })
+}
   startAnimationForLineChart(chart:any){
     let seq: any, delays: any, durations: any;
     seq = 0;
@@ -71,7 +85,7 @@ startAnimationForBarChart(chart:any){
 };
 ngOnInit() {
     /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
-
+this.AllUsers();
     const dataDailySalesChart: any = {
         labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: [

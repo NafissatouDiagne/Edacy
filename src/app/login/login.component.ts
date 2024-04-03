@@ -62,7 +62,7 @@ console.log(this.message)
 }
 
 ConnectionReussie(user:any){
-  this._login.navigate(['/'],{ state: { user: user } })
+  this._login.navigate(['/dashboard'],{ state: { user: user } })
 }
 getAllUser(email: any,token:any) {
   this.apiService.getRegister().subscribe((response) => {

@@ -1,0 +1,96 @@
+<h3 class="ml-7 font-light p-2">Liste des patients</h3>
+<div class="overflow-x-scroll ml-7 mr-7 mb-14">
+    <div class="bg-white shadow-md rounded-lg">
+        <div class="p-4">
+            <label for="table-search" class="sr-only">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                <input type="text" id="table-search" name="search" [(ngModel)]="search" (input)="filtered()"
+                    class="block w-full py-2 pl-10 pr-4 text-sm text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-gray-50"
+                    placeholder="Rechercher un patient">
+            </div>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Nom du patient
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Date de naissance
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Adresse
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Téléphone
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Sexe
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Nom médecin traitant
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Groupe Sanguin
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Allergies
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr *ngFor="let patient of filteredpatient"
+                        class="hover:bg-gray-50 transition-colors duration-200">
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ patient.fullname }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ patient.date_naiss }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ patient.address }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ patient.phone }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ patient.sexe }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ patient.nom_medecin_traitant }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ patient.groupe_sanguin }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ patient.allergies }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <a href="#" class="text-blue-500 hover:text-blue-700">Modifier</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

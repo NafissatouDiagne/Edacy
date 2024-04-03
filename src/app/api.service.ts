@@ -25,7 +25,7 @@ export class ApiService {
     return this.http.post<any>(`${this.apiUrl}/register`,data)
   }
   getRegister():Observable<any>{
-    return this.http.get<any>(`${this.apiUrl}/user`)
+    return this.http.get<any>(`${this.apiUrl}/allUser`)
   }
   /**
    * Login
@@ -39,5 +39,26 @@ export class ApiService {
     });
     return this.http.get<any>(`${this.apiUrl}/profile`, { headers });
   }
+  /**
+   * Update User
+   */
+  updateUserData(data:any,token:string):Observable<any>{
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
 
+    });
+    return this.http.put(`${this.apiUrl}/updateprofile`,data,{headers})
+  }
+/**
+ * Patients
+ *
+ */
+
+postaddPatients(data:any):Observable<any>{
+  return this.http.post(`${this.apiUrl}/addpatients`,data);
 }
+getPatients():Observable<any>{
+  return this.http.get(`${this.apiUrl}/allpatients`)
+}
+}
+

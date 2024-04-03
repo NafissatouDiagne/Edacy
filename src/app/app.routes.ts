@@ -8,15 +8,22 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
 import { RegisterComponent } from './register/register.component';
 import { MapsComponent } from './maps/maps.component';
 import { LoginComponent } from './login/login.component';
+import { PageAcceuilComponent } from './Acceuil/page-acceuil/page-acceuil.component';
+import { PersonnelComponent } from './Acceuil/personnel/personnel.component';
+import { MedecinComponent } from './Acceuil/medecin/medecin.component';
 
 export const routes: Routes = [
-  { path: '', component: DashboardComponent }, // Route pour le DashboardComponent à la racine
+  {path:'dashboard',component:DashboardComponent},
+  { path: 'login', component: LoginComponent }, // Route pour le LoginComponent à la racine
   { path: 'nav', component: NavbarComponent },
+  {path:'personel',component:PersonnelComponent},
   {path:'side',component:SidenavComponent},
+  {path:'medecin',component:MedecinComponent},
   {path:'chat',component:ChatComponent},
   {path:'user',component:UserprofileComponent},
   {path:'register',component:RegisterComponent},
+  {path:'',component:PageAcceuilComponent},
   {path:'login',component:LoginComponent},
   {path:'maps',component:MapsComponent},
-  { path: '**', redirectTo: '' } // Redirection vers le DashboardComponent si l'URL n'est pas reconnue
+  { path: '**', redirectTo: '/dashboard' } // Redirection vers le dashComponent si l'URL n'est pas reconnue
 ];

@@ -38,7 +38,7 @@
                       number</label>
                     <input type="tel"
                       class="bg-gray-50 border border-gray-300 text-dark  text-sm rounded-lg  focus:border-hidden block w-full p-2.5 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                     id="phone" name="phone"  placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" [(ngModel)]="dataApi.phone" autocomplete="tel" required />
+                     id="phone" name="phone"  placeholder="77 111 11-11" pattern="[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" [(ngModel)]="dataApi.phone" autocomplete="tel" required />
                       <mat-error class="text-red-700" *ngIf="form.submitted && form.controls['phone'].hasError('required')"> Phone is <strong>required </strong></mat-error>
 
                     </div>
@@ -82,18 +82,21 @@
         </div>
       </div>
       <div class=" col-md-8 mt-9" style="
-                background-image: url('https://www.dynamique-mag.com/wp-content/uploads/db6627f766186e082546671e00e5f0ab.jpg');
-                 background-position: center;
-                 background-size: cover;
-                 height: 650px;
+      background-image: url('https://presse.inserm.fr/wp-content/uploads/2023/06/PhotoCP-web-IA.jpg');
+       background-position: center;
+       background-size: cover;
+       background-repeat: no-repeat;
+       height: 650px;
 
-                 flex: 1;">
+       flex: 1;">
 
-        <h3 class="text-white text-center mt-10">
-         Groupe-M Edacy
-        </h3>
-        <p class=" mt-20 text-white text-center"></p>
-      </div>
+<h3 class="text-white text-center mt-10 font-serif text-5xl">
+MEDIFLOW
+</h3>
+<p class=" mt-20 text-dark  text-xl text-center">Mediflow représente une révolution dans la gestion hospitalière, offrant une plateforme numérique intuitive qui transforme la manière dont les établissements de santé fonctionnent au quotidien. Grâce à son approche innovante et centrée sur l'utilisateur, Mediflow simplifie les tâches administratives complexes, libérant ainsi du temps précieux pour les professionnels de la santé afin qu'ils puissent se concentrer pleinement sur les soins prodigués aux patients.</p>
+</div>
+
+<!--https://www.3dsystems.com/cdn-cgi/image/w=640,q=75,f=auto/sites/default/files/2023-09/3d-systems-theradaptive-partnership-announcement-image_0.jpg-->
 
 
     </div>
