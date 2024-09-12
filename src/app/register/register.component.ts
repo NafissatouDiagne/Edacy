@@ -34,19 +34,26 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class RegisterComponent {
 
   dataApi={
-   username: '',
-    email:'',
-   password: ''
+   lastname: '',
+   firstname: '',
+   phone: '',
+   email:'',
+   password: '',
+   confirmpass: '',
   }
 
   constructor(private apiService:ApiService,private _snackbar:MatSnackBar,private router:Router){}
   message='';
 submitForm(form:NgForm){
-if(form.valid){
+if(form){
   this.dataApi={
-    username:form.value.username,
+    lastname:form.value.lastname,
+    firstname:form.value.firstname,
+    phone:form.value.phone,
     email:form.value.email,
-    password:form.value.password
+    password:form.value.password,
+    confirmpass:form.value.confirmpass
+
 
 }
 this.apiService.postRegister(this.dataApi).subscribe(
@@ -62,7 +69,7 @@ console.log(this.message,response)
   },
   (error)=>{
     console.log('dataApi:',this.dataApi)
-    this.message='Erreur lors de l\'insertions des donnees';
+    this.message='Erreur lors de l\'insertion des donnees';
     this.snackBar();
 
 console.log(this.message,error)
@@ -74,6 +81,7 @@ this.message='Formulaire invalid';
 this.snackBar();
 
 console.log(this.message)
+console.log('this.dataApi', this.dataApi)
 }
 }
 snackBar(){

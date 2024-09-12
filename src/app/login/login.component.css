@@ -1,0 +1,35 @@
+.background-radial-gradient {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image:
+     url('https://beritaenam.com/wp-content/uploads/2020/11/1588182057-f5952a80525d8c74acff57323b33cfaec6cf4650.jpg');
+     overflow: hidden;
+}
+/*
+#radius-shape-1 {
+  height: 220px;
+  width: 220px;
+  top: -60px;
+  left: -130px;
+  background: radial-gradient(#44006b, #15119e);
+  overflow: hidden;
+}
+
+#radius-shape-2 {
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  bottom: -60px;
+  right: -110px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #1f39ff);
+  overflow: hidden;
+}
+*/
+.bg-glass {
+  background-color: hsla(0, 0%, 100%, 0.7) !important;
+  backdrop-filter: saturate(200%) blur(25px);
+}
+.bg-primary {
+  background-color: #00008B; /* Bleu foncé */
+}

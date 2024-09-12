@@ -1,0 +1,42 @@
+.section1 {
+  background-image: url('https://fnh.ma//uploads/actualites/619a2be766a71_maroc%20telemedecine%202021.png');
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  animation: fadeIn 2s ease-in-out;
+
+}
+.sec1div{
+  position: relative; /* Position absolue pour que le div soit positionné par rapport à la section */
+  top: 50%; /* Positionner le div au milieu verticalement */
+  left: 40%; /* Positionner le div au milieu horizontalement */
+  transform: translate(-90%, -50%); /* Ajuster la position pour la centrage exact */
+  padding: 50px; /* Ajouter du rembourrage pour le texte */
+  background-color: rgba(255, 255, 255, 0.8); /* Ajouter une couleur de fond avec une opacité */
+  border-radius: 10px; /* Ajouter des coins arrondis */
+  max-width: 40%;
+height: 50vh;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.872); /* Ajoutez une ombre légère */
+
+
+}
+
+.section2 {
+  background-color: rgb(255,255,255);
+  height: 500px;
+  width: 100vw;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+
+  }
+}

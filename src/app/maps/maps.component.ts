@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SidenavComponent } from '../sidenav/sidenav.component';
 declare const google: any;
 
 interface Marker {
@@ -11,6 +11,8 @@ draggable?: boolean;
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
+  standalone:true,
+  imports:[SidenavComponent],
   styleUrls: ['./maps.component.css']
 })
 export class MapsComponent implements OnInit {
@@ -112,7 +114,7 @@ export class MapsComponent implements OnInit {
         }]
 
     };
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+ //   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
     var marker = new google.maps.Marker({
         position: myLatlng,
@@ -120,7 +122,7 @@ export class MapsComponent implements OnInit {
     });
 
     // To add the marker to the map, call setMap();
-    marker.setMap(map);
+  //  marker.setMap(map);
   }
 
 }
